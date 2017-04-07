@@ -20,9 +20,10 @@ insert
 	has-role interested;
 
 "member" sub role;
+"group" sub role;
 "has-member" sub relation
 	has-role member
-	has-role container;
+	has-role group;
 
 "moderator" sub role;
 "moderated" sub role;
@@ -38,52 +39,52 @@ insert
 
 "class" sub role;
 "instance" sub role;
-"has-type" sub relation
+"has-class" sub relation
 	has-role class
 	has-role instance;
 
 "part" sub contained;
 "whole" sub container;
-"is-part-of" sub container-of
+"is-part-of" sub relation
 	has-role part
 	has-role whole;
 
 "located" sub part;
-"region" sub whole;
-"is-located-in" sub is-part-of
+"locating" sub whole;
+"is-located-in" sub relation
 	has-role located
-	has-role region;
+	has-role locating;
 
 "subclass" sub role;
+"superclass" sub role;
 "is-subclass-of" sub relation
 	has-role subclass
-	has-role class;
+	has-role superclass;
 
-"contact" sub role is-abstract;
-"contact-1" sub contact;
-"contact-2" sub contact;
+"friend" sub role is-abstract;
 "knows" sub relation
-	has-role contact-1
-	has-role contact-2;
+	has-role friend;
 
-"like" sub role;
-"admirer" sub role;
+"liked" sub role;
+"liker" sub role;
 "likes" sub relation
-	has-role like
-	has-role admirer;
+	has-role liked
+	has-role liker;
 
 "reply" sub role;
-"original" sub role;
+"replied" sub role;
 "reply-of" sub relation
 	has-role reply
-	has-role original;
+	has-role replied;
 
-"institution" sub role;
-"individual" sub role;
+"school" sub role;
+"student" sub role;
 "study-at" sub relation
-	has-role institution
-	has-role individual;
+	has-role school
+	has-role student;
 
+"employee" sub role;
+"employer" sub role;
 "work-at" sub relation
-	has-role institution
-	has-role individual;
+	has-role employer,
+	has-role employee;

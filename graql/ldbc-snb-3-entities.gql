@@ -3,14 +3,17 @@ insert
 
 # geographic entities
 "place" sub entity
-	has-resource place-id
+	has-key place-id
 	has-resource name
-	plays-role region;
+	plays-role locating;
+
 "city" sub place
 	plays-role part;
+
 "country" sub place
 	plays-role whole
 	plays-role part;
+
 "continent" sub place
 	plays-role whole;
 
@@ -20,11 +23,13 @@ insert
 	has-resource title
 	has-resource creation-date
 	plays-role container
+	plays-role group
 	plays-role moderated
 	plays-role tagged;
+
 "message" sub entity
 	is-abstract
-	has-resource message-id
+	has-key message-id
 	has-resource browser-used
 	has-resource creation-date
 	has-resource location-ip
@@ -33,34 +38,42 @@ insert
 	plays-role product
 	plays-role tagged
 	plays-role located
-	plays-role like
-	plays-role original;
+	plays-role liked
+	plays-role replied;
+
 "comment" sub message
 	plays-role reply;
+
 "post" sub message
 	has-resource language
 	has-resource image-file
 	plays-role contained;
+
 "tag" sub entity
-	has-resource tag-id
+	has-key tag-id
 	has-resource name
 	plays-role interest
 	plays-role label
 	plays-role instance;
+
 "tag-class" sub entity
-	has-resource tag-class-id
+	has-key tag-class-id
 	has-resource name
 	plays-role class
-	plays-role subclass;
+	plays-role subclass
+	plays-role superclass;
 
 # institutional entities
-"organization" sub entity
-	has-resource organization-id
+"organisation" sub entity
+	has-key organisation-id
 	has-resource name
-	plays-role located
-	plays-role institution;
-"company" sub organization;
-"university" sub organization;
+	plays-role located;
+
+"company" sub organisation
+	plays-role employer;
+
+"university" sub organisation
+	plays-role school;
 
 # individuals
 "person" sub entity
@@ -79,7 +92,7 @@ insert
 	plays-role member
 	plays-role moderator
 	plays-role located
-	plays-role contact-1
-	plays-role contact-2
-	plays-role admirer
-	plays-role individual;
+	plays-role friend
+	plays-role liker
+	plays-role employer
+	plays-role student;
