@@ -5,6 +5,7 @@ insert
 "place" sub entity
 	has-key place-id
 	has-resource name
+	has-resource url
 	plays-role locating;
 
 "city" sub place
@@ -52,6 +53,7 @@ insert
 "tag" sub entity
 	has-key tag-id
 	has-resource name
+	has-resource url
 	plays-role interest
 	plays-role label
 	plays-role instance;
@@ -59,6 +61,7 @@ insert
 "tag-class" sub entity
 	has-key tag-class-id
 	has-resource name
+	has-resource url
 	plays-role class
 	plays-role subclass
 	plays-role superclass;
@@ -67,6 +70,7 @@ insert
 "organisation" sub entity
 	has-key organisation-id
 	has-resource name
+	has-resource url
 	plays-role located;
 
 "company" sub organisation
