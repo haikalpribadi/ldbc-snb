@@ -40,7 +40,7 @@ insert
 
 "class" sub role;
 "instance" sub role;
-"has-class" sub relation
+"has-type" sub relation
 	has-role class
 	has-role instance;
 
@@ -64,25 +64,15 @@ insert
 
 "friend" sub role is-abstract;
 "knows" sub relation
-<<<<<<< HEAD
-	has-role friend;
-=======
 	has-resource creation-date
-	has-role contact-1
-	has-role contact-2;
->>>>>>> b316c19e0196e825802e9e66b07172f9d6ecf372
+	has-role friend;
 
 "liked" sub role;
 "liker" sub role;
 "likes" sub relation
-<<<<<<< HEAD
+	has-resource creation-date
 	has-role liked
 	has-role liker;
-=======
-	has-resource creation-date
-	has-role like
-	has-role admirer;
->>>>>>> b316c19e0196e825802e9e66b07172f9d6ecf372
 
 "reply" sub role;
 "replied" sub role;
@@ -93,23 +83,13 @@ insert
 "school" sub role;
 "student" sub role;
 "study-at" sub relation
-<<<<<<< HEAD
+	has-resource class-year
 	has-role school
 	has-role student;
-=======
-	has-resource class-year
-	has-role institution
-	has-role individual;
->>>>>>> b316c19e0196e825802e9e66b07172f9d6ecf372
 
 "employee" sub role;
 "employer" sub role;
 "work-at" sub relation
-<<<<<<< HEAD
+	has-resource work-from
 	has-role employer,
 	has-role employee;
-=======
-	has-resource work-from
-	has-role institution
-	has-role individual;
->>>>>>> b316c19e0196e825802e9e66b07172f9d6ecf372
